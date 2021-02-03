@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+
+    <link rel="preconnect" href="https://fonts.gstatic.com" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Crimson+Pro:wght@200&family=Lora:wght@400;700&family=Montserrat:wght@300;500;600&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="css/style.css" />
+
+    <title>Interior Consultant</title>
+  </head>
+  <body class="container">
+    <header class="header">
+      <a href="#" class="header__logo">This Interior</a>
+
+      <!-- DESKTOP NAV -->
+      <ul class="header__nav">
+        <li><a href="#" class="header__nav-link">Home</a></li>
+        <li><a href="#" class="header__nav-link">Collection</a></li>
+        <li><a href="#" class="header__nav-link">About</a></li>
+        <li><a href="#" class="header__nav-link">Contact</a></li>
+      </ul>
+
+      <!-- MOBILE NAV  -->
+      <div class="nav-mobile">
+        <!-- CHECKBOX, LABEL AND ICON -->
+        <input type="checkbox" class="nav-mobile__checkbox" id="navi-toggle" />
+        <label for="navi-toggle" class="nav-mobile__button"
+          ><span class="nav-mobile__icon"></span
+        ></label>
+
+        <!-- NAVIGATION OPTIONS -->
+
+        <ul class="nav-mobile__bkg">
+          <li class="nav-mobile__item">
+            <a href="#" class="nav-mobile__link">Home</a>
+          </li>
+          <li class="nav-mobile__item">
+            <a href="#" class="nav-mobile__link">Collection</a>
+          </li>
+          <li class="nav-mobile__item">
+            <a href="#" class="nav-mobile__link">About</a>
+          </li>
+          <li class="nav-mobile__item">
+            <a href="#" class="nav-mobile__link">Contact</a>
+          </li>
+        </ul>
+      </div>
+    </header>
+    <section class="section">
+      <h1 class="section__title">Modern interior</h1>
+      <p class="section__text">
+        A full-Service residential &amp; commercial interior design and staging
+        company offering professional organizing &amp; eco-services.
+      </p>
+      <a href="#" class="section__btn">Read more <span>&rarr;</span></a>
+      <img src="img/photo1.png" alt="Interior Photo 1" class="section__img" />
+
+      <figure class="designer">
+        <div class="designer__details">
+          <img
+            src="img/photo2.png"
+            alt="Designer Photo 1"
+            class="designer__img"
+          />
+          <p class="designer__name">
+            Aliza Webber <span class="designer__job">Interior designer</span>
+          </p>
+        </div>
+        <figcaption class="designer__title">
+          Designed in 2020 by Aliza Webber
+        </figcaption>
+      </figure>
+    </section>
+    <footer class="footer">Mi-Chan &copy; DevChallenges.io</footer>
+  </body>
+</html>

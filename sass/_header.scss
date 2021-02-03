@@ -1,0 +1,40 @@
+/* HEADER [LOGO? + DESKTOP NAVIGATION] */
+
+.header {
+  /* LOGO */
+  &__logo:link,
+  &__logo:visited {
+    font-family: "Crimson Pro", serif;
+    font-weight: 200;
+    font-size: 1.4rem;
+    line-height: 1.6rem;
+    text-transform: uppercase;
+    text-decoration: none;
+    padding: 0.8rem;
+    color: #fff;
+    border: 1px solid #fff;
+  }
+
+  /* DESKTOP NAV */
+
+  &__nav {
+    display: flex;
+    justify-content: space-between;
+    list-style: none;
+    width: 40%;
+
+    @media only screen and (max-width: $bp-medium) {
+      display: none;
+    }
+
+    &-link:link,
+    &-link:visited {
+      font-family: "Montserrat", sans-serif;
+      font-weight: 500;
+      font-size: 1.8rem;
+      line-height: 2.2rem;
+      color: #fff;
+      text-decoration: none;
+    }
+  }
+}

@@ -1,0 +1,145 @@
+/* MOBILE NAVIGATION */
+
+.nav-mobile {
+  position: relative;
+  display: none;
+  align-items: center;
+
+  /* THIS IS IMPORTANT, WITHOUT THIS THE BOX WILL BE OUTSIDE OF THE HEADER BECAUSE IT WILL HAVE A WIDTH OF 0 AND HEIGHT OF 0 */
+
+  width: 4rem;
+
+  /* THE NAV WILL BE HIDE UNTIL 700PX */
+
+  @media only screen and (max-width: $bp-medium) {
+    display: flex;
+  }
+
+  /* CONECTING THE LABEL WITH THE CHECKBOX AND HIDDING THE CHECKBOX TO MAKE A HAMBURGER */
+
+  &__checkbox {
+    display: none;
+  }
+
+  /* POSITION FIXED WITH A HIGH Z-INDEX TO MAKE IT ALWAYS ON TOP EVEN IF THE WEBPAGE SCROLL */
+
+  &__button {
+    height: 4rem;
+    width: 4rem;
+    cursor: pointer;
+    position: fixed;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 100;
+  }
+
+  /* THIS IS THE PAGE THAT WILL BE DISPLAYED WHEN THE CHECKBOX OR BUTTON -AT THIS POINT- WILL BE SELECTED */
+
+  &__bkg {
+    height: 100vh;
+    list-style: none;
+
+    /* THIS WILL MAKE THE CONTENT HIDE */
+
+    width: 0;
+    opacity: 0;
+    visibility: hidden;
+
+    /* ^^^ */
+
+    position: fixed;
+    top: 0;
+    right: 0;
+
+    /* A HIGH Z-INDEX IN ORDER TO MAKE THE PAGE ON TOP OF EVERYTHING, BUT NOT THE BUTTON */
+
+    z-index: 75;
+
+    /* NOTHING TO EXPLAIN HERE, JUST SOME NICE EFFECT AND MORE FLEX */
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: #181719;
+    transition: all 0.5s cubic-bezier(0.86, 0, 0.07, 1);
+  }
+
+  /* THIS IS THE FUNTIONALITY, WITH THE PSEUDOCLASS AND THE SIBLING YOU WILL BE ABLE TO EXPAND THE BACKGROUND AND COVER ALL THE SPACE */
+
+  &__checkbox:checked ~ &__bkg {
+    width: 100%;
+    opacity: 1;
+    visibility: visible;
+  }
+
+  /* MAKING THE BARS OR ICONS WITH PSEUDOCLASSES */
+
+  &__icon {
+    position: relative;
+
+    &::before,
+    &::after {
+      content: "";
+      position: absolute;
+      left: 0;
+      transition: all 0.2s;
+    }
+    &,
+    &::before,
+    &::after {
+      width: 3rem;
+      height: 2px;
+      background-color: #fff;
+      display: block;
+    }
+
+    &::before {
+      top: -1rem;
+    }
+    &::after {
+      top: 1rem;
+    }
+  }
+
+  /* FUNTIONALITY
+  
+  WITH THIS YOU WILL HIDDE THE MIDDLE BAR AND THEN YOU WILL ROTATE THE PSEUDO ELEMENT IN ORDER TO MAKE A X
+
+  */
+
+  &__checkbox:checked + &__button &__icon {
+    background-color: transparent;
+  }
+
+  /* YOU COULD USE 45DEG AND IT WILL WORK TOO, BUT IN THIS WAY IT WILL MAKE A NICE EFFECT */
+
+  &__checkbox:checked + &__button &__icon::before {
+    top: 0;
+    transform: rotate(135deg);
+  }
+
+  &__checkbox:checked + &__button &__icon::after {
+    top: 0;
+    transform: rotate(-135deg);
+  }
+
+  &__item {
+    padding: 3rem;
+  }
+
+  &__link:link,
+  &__link:visited {
+    font-family: "Montserrat", sans-serif;
+    font-weight: 500;
+    font-size: 4rem;
+    line-height: 2.2rem;
+    color: #fff;
+    text-decoration: none;
+  }
+
+  &__link:hover {
+    font-weight: 600;
+  }
+}
